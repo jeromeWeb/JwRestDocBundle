@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<SERVICE>
+	<RESSOURCE>Ressources</RESSOURCE>
+	<TITLE>GET /ressources/:id</TITLE>
+	<DESCRIPTION>Service description</DESCRIPTION>
+	<URL>/ressources/:id.:format</URL>
+	<METHOD>GET</METHOD>
+	<SECURITY>true</SECURITY>
+	<AVAILABLE>true</AVAILABLE>
+	<RESPONSE_FORMAT>xml</RESPONSE_FORMAT>
+	<PARAMS>
+		<PARAM>
+			<NAME>id</NAME>
+			<REQUIRED>true</REQUIRED>
+			<DESCRIPTION>Param description</DESCRIPTION>
+			<DEFAULT>1234</DEFAULT>
+			<SAMPLE>5678</SAMPLE>
+		</PARAM>
+	</PARAMS>
+	<SAMPLES>
+		<SAMPLE>
+			<METHOD>GET</METHOD>
+			<URL>/ressources/1234.xml</URL>
+			<FORMAT>xml</FORMAT>
+			<STATUSCODE>200</STATUSCODE>
+			<RESPONSE><![CDATA[
+<?xml version="1.0" encoding="utf-8" ?>
+<RESPONSE>
+    <META>
+        <STATUSCODE>200</STATUSCODE>
+        <MESSAGE>OK : View successfully calculated</MESSAGE>
+    </META>
+	...
+</RESPONSE>]]></RESPONSE>
+		</SAMPLE>
+	</SAMPLES>
+	<ERRORS>
+		<ERROR>
+			<TITLE>Activité qui n'est pas un match</TITLE>
+			<METHOD>GET</METHOD>
+			<URL>/activity/notamatch/match.xml</URL>
+			<FORMAT>xml</FORMAT>
+			<STATUSCODE>400</STATUSCODE>
+			<RESPONSE><![CDATA[
+<?xml version="1.0" encoding="utf-8" ?>
+<RESPONSE>
+	<META>
+		<STATUSCODE>400</STATUSCODE>
+		<MESSAGE>Bad Request : Activity is not a match.</MESSAGE>
+	</META>
+</RESPONSE>]]></RESPONSE>
+		</ERROR>
+	</ERRORS>
+</SERVICE>
