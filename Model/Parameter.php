@@ -4,6 +4,10 @@ namespace Jw\RestDocBundle\Model;
 
 use Jw\RestDocBundle\Model\ModelBaseXml;
 
+/**
+ * 
+ * @author Jérôme Weber <jerome.weber@stadline.com>
+ */
 class Parameter extends ModelBaseXml
 {
 	/**

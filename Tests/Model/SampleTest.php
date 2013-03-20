@@ -3,7 +3,6 @@
 namespace Jw\RestDocBundle\Tests\Model;
 
 use Jw\RestDocBundle\Model\Sample;
-use \SimpleXMLElement;
 use Jw\RestDocBundle\Tests\Fixture\Fixture;
 
 /**

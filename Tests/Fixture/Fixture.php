@@ -19,7 +19,7 @@ class Fixture
 	public static function getValidParameterXml()
 	{
 		$xml = simplexml_load_file(dirname(__FILE__)."/documentation.xml");
-		return $xml->PARAMS->PARAM;
+		return $xml->PARAMETERS->PARAMETER;
 	}
 
 	/**
@@ -31,6 +31,28 @@ class Fixture
 	{
 		$xml = simplexml_load_file(dirname(__FILE__)."/documentation.xml");
 		return $xml->SAMPLES->SAMPLE;
+	}
+
+	/**
+	 * Provides an info
+	 *
+	 * @return \SimpleXMLElement
+	 */
+	public static function getValidInfoXml()
+	{
+		$xml = simplexml_load_file(dirname(__FILE__)."/documentation.xml");
+		return $xml->INFOS->INFO;
+	}
+
+	/**
+	 * Provides a service
+	 *
+	 * @return \SimpleXMLElement
+	 */
+	public static function getValidServiceXml()
+	{
+		$xml = simplexml_load_file(dirname(__FILE__)."/documentation.xml");
+		return $xml;
 	}
 	
 }

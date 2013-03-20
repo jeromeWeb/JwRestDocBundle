@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<SERVICE>
+	<RESSOURCE>Ressources</RESSOURCE>
+	<TITLE>AVAILABLE MUST BE BOOLEAN</TITLE>
+	<DESCRIPTION>Service description</DESCRIPTION>
+	<URL>/ressources/:id.:format</URL>
+	<METHOD>GET</METHOD>
+	<SECURITY>1</SECURITY>
+	<AVAILABLE>not a boolean</AVAILABLE>
+	<FORMAT>xml, json</FORMAT>
+</SERVICE>

@@ -1,33 +1,17 @@
 <?xml version="1.0"?>
 <SERVICE>
 	<RESSOURCE>Ressources</RESSOURCE>
-	<TITLE>GET /ressources/:id</TITLE>
+	<TITLE>OLD TAG NAME ARTICLE MUST DISAPPEAR</TITLE>
 	<DESCRIPTION>Service description</DESCRIPTION>
 	<URL>/ressources/:id.:format</URL>
 	<METHOD>GET</METHOD>
 	<SECURITY>true</SECURITY>
 	<AVAILABLE>true</AVAILABLE>
 	<FORMAT>xml, json</FORMAT>
-	<PARAMETERS>
-		<PARAMETER>
-			<NAME>id</NAME>
-			<REQUIRED>true</REQUIRED>
-			<DESCRIPTION>Param description</DESCRIPTION>
-			<DEFAULT>1234</DEFAULT>
-			<SAMPLE>5678</SAMPLE>
-		</PARAMETER>
-		<PARAMETER>
-			<NAME>lang</NAME>
-			<REQUIRED>false</REQUIRED>
-			<DESCRIPTION>Param lang description</DESCRIPTION>
-			<DEFAULT>fr</DEFAULT>
-			<SAMPLE>en</SAMPLE>
-		</PARAMETER>
-	</PARAMETERS>
 	<INFOS>
 		<INFO>
 			<TITLE>Title</TITLE>
-			<CONTENT>Article</CONTENT>
+			<ARTICLE>Article</ARTICLE>
 		</INFO>
 	</INFOS>
 	<SAMPLES>

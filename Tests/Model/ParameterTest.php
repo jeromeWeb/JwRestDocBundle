@@ -3,7 +3,6 @@
 namespace Jw\RestDocBundle\Tests\Model;
 
 use Jw\RestDocBundle\Model\Parameter;
-use \SimpleXMLElement;
 use Jw\RestDocBundle\Tests\Fixture\Fixture;
 
 /**
@@ -16,7 +15,7 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
 	/**
 	 * Provides a valid SimpleXmlElement for tests
 	 * 
-	 * @return \SimpleXMLElement
+	 * @return SimpleXMLElement
 	 */
 	private function getValidXml()
 	{
