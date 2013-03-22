@@ -24,5 +24,8 @@ class JwRestDocExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        $container->setParameter("jw_rest_doc.title", $config['title']);
+        $container->setParameter("jw_rest_doc.documentation", $config['documentation']);
     }
 }

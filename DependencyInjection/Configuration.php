@@ -18,11 +18,16 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('jw_restdoc');
+        $rootNode = $treeBuilder->root('jw_rest_doc');
         
         $rootNode
         	->children()
 	        	->scalarNode("title")->defaultValue("Rest API")->end()
+	        	->arrayNode("documentation")
+	        		->prototype('scalar')->end()
+	        	->info("Folders or files to consider")
+	        	->example("/doc/services/")
+	        	->end()
 	        ->end()
         ;
 

@@ -16,6 +16,6 @@ class DocController extends Controller
      */
     public function indexAction()
     {
-        return array('name' => "noname");
+        return array('name' => "noname", "title" => $this->container->getParameter("jw_rest_doc.title"));
     }
 }

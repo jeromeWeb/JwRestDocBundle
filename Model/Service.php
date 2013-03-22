@@ -26,7 +26,7 @@ class Service extends ModelBaseXml
 	{
 		$this->container = $container;
 	}
-	
+
 	/**
 	 * Returns a mapping to hydrate childrens
 	 * 
