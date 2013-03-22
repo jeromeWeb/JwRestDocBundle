@@ -2,6 +2,16 @@
 
 namespace Jw\RestDocBundle\Tests\Model;
 
+use Jw\RestDocBundle\Model\Error;
+
+use Jw\RestDocBundle\Model\Sample;
+
+use Jw\RestDocBundle\Model\Info;
+
+use Jw\RestDocBundle\Model\Parameter;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Jw\RestDocBundle\DependencyInjection\JwRestDocExtension;
 use Jw\RestDocBundle\Model\Service;
 use Jw\RestDocBundle\Tests\Fixture\Fixture;
 
@@ -27,8 +37,34 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
 	
 	public function testGetter()
 	{
-		$service = new Service();
+		
+		$container = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
 
+		$container->expects($this->any())
+		->method("get")
+		->will($this->returnCallback(
+			function () {
+				$args = func_get_args();
+				switch($args[0])
+				{
+					case"jw_rest_doc.parameter":
+						return new Parameter();
+					break;
+					case"jw_rest_doc.sample":
+						return new Sample();
+					break;
+					case"jw_rest_doc.info":
+						return new Info();
+					break;
+					case"jw_rest_doc.error":
+						return new Error();
+					break;
+				}
+			}
+		));
+
+		$service = new Service($container);
+		
 		$service->setXml($this->getValidXml());
 		
 		// Ressource

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}
+        Rest API Documentation
+      {% endblock %}
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('bundles/jwrestdoc/css/main.css') }}" type="text/css" media="all" />
+    {% endblock %}
+    {% block javascripts %}
+    {% endblock %}
+    <link rel="shortcut icon" href="{{ asset('bundles/jwrestdoc/images/favicon.ico') }}" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <div class="content">
+          <h1><a href="{{ path('JwRestDoc_homepage') }}">Accueil
+          </a></h1>
+        </div>
+      </div>
+      
+      <div id="content">
+        {% if app.session.hasFlash('notice') %}
+          <div class="flash_notice">
+            {{ app.session.flash('notice') }}
+          </div>
+        {% endif %}
+ 
+        {% if app.session.hasFlash('error') %}
+          <div class="flash_error">
+            {{ app.session.flash('error') }}
+          </div>
+        {% endif %}
+ 
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+      </div>
+ 
+      <div id="footer">
+        <div class="content">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

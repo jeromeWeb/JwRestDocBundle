@@ -2,6 +2,8 @@
 
 namespace Jw\RestDocBundle\Model;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 use Jw\RestDocBundle\Model\ModelBaseXml;
 
 use \SimpleXMLElement;
@@ -18,7 +20,13 @@ class Service extends ModelBaseXml
 	protected $infos;
 	protected $samples;
 	protected $errors;
+	protected $container;
 
+	public function __construct(ContainerInterface $container)
+	{
+		$this->container = $container;
+	}
+	
 	/**
 	 * Returns a mapping to hydrate childrens
 	 * 
@@ -28,24 +36,24 @@ class Service extends ModelBaseXml
 	{
 		return array(
 			array(
-					"tag" 	=> "INFOS",
-					"model"	=> "Jw\RestDocBundle\Model\Info",
-					"var"	=> "infos"
+					"tag" 		=> "INFOS",
+					"service"	=> "jw_rest_doc.info",
+					"var"		=> "infos"
 				),
 			array(
-					"tag" 	=> "PARAMETERS",
-					"model"	=> "Jw\RestDocBundle\Model\Parameter",
-					"var"	=> "parameters"
+					"tag" 		=> "PARAMETERS",
+					"service"	=> "jw_rest_doc.parameter",
+					"var"		=> "parameters"
 				),
 			array(
-					"tag" 	=> "SAMPLES",
-					"model"	=> "Jw\RestDocBundle\Model\Sample",
-					"var"	=> "samples"
+					"tag" 		=> "SAMPLES",
+					"service"	=> "jw_rest_doc.sample",
+					"var"		=> "samples"
 				),
 			array(
-					"tag" 	=> "ERRORS",
-					"model"	=> "Jw\RestDocBundle\Model\Error",
-					"var"	=> "errors"
+					"tag" 		=> "ERRORS",
+					"service"	=> "jw_rest_doc.error",
+					"var"		=> "errors"
 				)
 		);
 	}
@@ -70,9 +78,9 @@ class Service extends ModelBaseXml
 	{
 		foreach ($this->getHydratorMapping() as $map)
 		{
-			$tag 	= $map['tag'];
-			$model 	= $map['model'];
-			$var 	= $map['var'];
+			$tag 		= $map['tag'];
+			$service 	= $map['service'];
+			$var 		= $map['var'];
 
 			$repository =& $this->$var;
 			
@@ -84,7 +92,7 @@ class Service extends ModelBaseXml
 			if ($this->getXml()->$tag)
 			{
 				foreach ($this->getXml()->$tag->children() as $element) {
-					$obj = new $model;
+					$obj = $this->container->get($service);
 					$obj->setXml($element);
 					$repository[] = $obj;
 				}
@@ -235,8 +243,7 @@ class Service extends ModelBaseXml
 		
 			libxml_use_internal_errors(false);
 			throw new Exception(sprintf("%s", $message));
-		}		
+		}
 		libxml_use_internal_errors(false);
 	}
-	
 }

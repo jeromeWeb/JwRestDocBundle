@@ -1,20 +1,27 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
-    <parameters>
-        <parameter key="jw_rest_doc.example.class">Jw\RestDocBundle\Example</parameter>
-    </parameters>
+	<parameters>
+		<parameter key="jw_rest_doc.title">Rest API</parameter>
+		<parameter key="jw_rest_doc.service">Jw\RestDocBundle\Model\Service</parameter>
+		<parameter key="jw_rest_doc.parameter">Jw\RestDocBundle\Model\Parameter</parameter>
+		<parameter key="jw_rest_doc.info">Jw\RestDocBundle\Model\Info</parameter>
+		<parameter key="jw_rest_doc.sample">Jw\RestDocBundle\Model\Sample</parameter>
+		<parameter key="jw_rest_doc.error">Jw\RestDocBundle\Model\Error</parameter>
+	</parameters>
 
-    <services>
-        <service id="jw_rest_doc.example" class="%jw_rest_doc.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
-        </service>
-    </services>
-    -->
+	<services>
+		<service id="jw_rest_doc.service" 	class="%jw_rest_doc.service%" >
+			<argument type="service" id="service_container" />
+		</service>
+		
+		<service id="jw_rest_doc.parameter" class="%jw_rest_doc.parameter%" />
+		<service id="jw_rest_doc.info" 		class="%jw_rest_doc.info%" 		/>
+		<service id="jw_rest_doc.sample" 	class="%jw_rest_doc.sample%" 	/>
+		<service id="jw_rest_doc.error" 	class="%jw_rest_doc.error%" 	/>
+	</services>
+
 </container>
