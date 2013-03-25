@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <SERVICE>
-	<RESSOURCE>Ressources</RESSOURCE>
+	<RESOURCE>Ressources</RESOURCE>
 	<TITLE>GET /ressources/:id</TITLE>
 	<DESCRIPTION>Service description</DESCRIPTION>
 	<URL>/ressources/:id.:format</URL>

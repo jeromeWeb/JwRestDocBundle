@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <SERVICE>
-	<RESSOURCE>Ressources</RESSOURCE>
+	<RESOURCE>Ressources</RESOURCE>
 	<TITLE>SECURITY must be boolean</TITLE>
 	<DESCRIPTION>Service description</DESCRIPTION>
 	<URL>/ressources/:id.:format</URL>

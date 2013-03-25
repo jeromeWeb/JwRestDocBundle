@@ -101,13 +101,13 @@ class Service extends ModelBaseXml
 	}
 	
 	/**
-	 * Gets the ressource of the service
+	 * Gets the resource of the service
 	 * 
 	 * @return string
 	 */
-	public function getRessource()
+	public function getResource()
 	{
-		return (string) $this->getXml()->RESSOURCE;
+		return (string) $this->getXml()->RESOURCE;
 	}
 
 	/**

@@ -68,16 +68,16 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
 		$service->setXml($this->getValidXml());
 		
 		// Ressource
-		$this->assertEquals("Ressources", $service->getRessource(), "Ressource is 'Ressource'");
+		$this->assertEquals("Resources", $service->getResource(), "Resource is 'Resource'");
 		
 		// Title
-		$this->assertEquals("GET /ressources/:id", $service->getTitle(), "Title is 'GET /ressources/:id'");
+		$this->assertEquals("GET /resources/:id", $service->getTitle(), "Title is 'GET /resources/:id'");
 		
 		// Description
 		$this->assertEquals("Service description", $service->getDescription(), "Description is 'Service description'");
 
 		// Url
-		$this->assertEquals("/ressources/:id.:format", $service->getUrl(), "Url is '/ressources/:id.:format'");
+		$this->assertEquals("/resources/:id.:format", $service->getUrl(), "Url is '/resources/:id.:format'");
 		
 		// Method
 		$this->assertEquals("GET", $service->getMethod(), "Method is 'GET'");

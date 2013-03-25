@@ -4,7 +4,7 @@
 	<xs:element name="SERVICE">
 		<xs:complexType>
 			<xs:all>
-				<xs:element name="RESSOURCE" type="xs:string" />
+				<xs:element name="RESOURCE" type="xs:string" />
 				<xs:element name="TITLE" type="xs:string" />
 				<xs:element name="DESCRIPTION" type="xs:string" />
 				<xs:element name="URL" type="xs:string" />

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <SERVICE>
-	<RESSOURCE>Ressources</RESSOURCE>
+	<RESOURCE>Ressources</RESOURCE>
 	<TITLE>OLD TAG NAME ARTICLE MUST DISAPPEAR</TITLE>
 	<DESCRIPTION>Service description</DESCRIPTION>
 	<URL>/ressources/:id.:format</URL>
